@@ -3,12 +3,10 @@
 
 int Conta::numeroDeContas = 0;
 
-Conta::Conta(std::string numero, std::string cpfTitular, std::string nomeTitutlar):
+Conta::Conta(std::string numero, Titular titular):
     numero(numero),
-    cpfTitular(cpfTitular),
-    nomeTitular(nomeTitular),
+    titular(titular), 
     saldo(0){
-        verificaTamanhoDoNome();
         numeroDeContas++;
     }
 Conta::~Conta()
@@ -28,14 +26,6 @@ void Conta::depositar(float valorADepositar){
     saldo+=valorADepositar;
 }
 
-std::string Conta::recuperarCPFTitular(){
-    return cpfTitular;
-}
-
-std::string Conta::recuperarNomeTitular(){
-    return nomeTitular;
-}
-
 std::string Conta::recuperarNumero(){
     return numero;
 }
@@ -46,11 +36,4 @@ float Conta::recuperarSaldo(){
 
 int Conta::retornoNumeroDeContas(){
     return numeroDeContas;
-}
-
-void Conta::verificaTamanhoDoNome(){
-    if(nomeTitular.size() < 5){
-        std::cout << "Nome do titular contém menos de 5 caracters" << std::endl;
-        exit(1); 
-    }
 }
