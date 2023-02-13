@@ -2,16 +2,11 @@
 #include <string>
 #include <iostream>
 #include "cpf.hpp"
+#include "pessoa.hpp"
 
-class Titular {
-    private:
-    std::string nome;
-    Cpf cpf;
+class Titular : public Pessoa{
+   
 
-    public:
-    Titular(std::string nome, Cpf cpf);
-    std::string recuperarNomeTitular();
-
-    private:
-    void verificaTamanhoDoNome();
+   public:
+   Titular(std::string nome, Cpf cpf);
 };
