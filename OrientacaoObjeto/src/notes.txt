@@ -1,0 +1,10 @@
+#
+    Sobre métodos virtual:
+        - Quando passamos uma referência de um objeto de uma classe para uma função e chamamos um métodos
+          que está tanto na classe pai como na classe filha, se a refêcencia na função for da classe pai,
+          ela chamará o método implementado na classe pai, mesmo já existindo um na classe filha.
+          Ex: Método sacar de conta.
+        - É interessante colocar os construtores de classes que não são finais como virtuais, para evitar
+          o vazamento de memória. (Ou a classe é final ou o destrutor é virtual)
+        - Classes finais não podem ser extendidas
+#
