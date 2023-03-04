@@ -7,4 +7,10 @@
         - É interessante colocar os construtores de classes que não são finais como virtuais, para evitar
           o vazamento de memória. (Ou a classe é final ou o destrutor é virtual)
         - Classes finais não podem ser extendidas
+        - Um método puramente virtual (Método abstrado) deverar ter essa aparência: virtual float taxaDeSaque() const = 0;,
+          ou seja, virtual (retorno) nomeDoMetodo() = 0;
+
+    Sobre classes "abstradas"
+        - São classes que possuem pelo menos um método puramente virtual
+        - Não será possível criar um objeto a partir dessa classe (Instanciar ela)
 #

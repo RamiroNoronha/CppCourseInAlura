@@ -13,7 +13,7 @@ Conta::~Conta()
 {
     numeroDeContas--;
 }
-void Conta::sacar(float valorASacar){
+void Conta::sacar(float valorASacar) {
 
     if(valorASacar < 0){
         std::cout << "Não se pode sacar valores negativos" << std::endl;
@@ -23,7 +23,7 @@ void Conta::sacar(float valorASacar){
         std::cout << "Valor a sacar é maior que o saldo" << std::endl;
         return;
     }
-    float tarifaDeSaque = valorASacar*0.05;
+    float tarifaDeSaque = valorASacar * taxaDeSaque();
     float valorDoSaque = valorASacar + tarifaDeSaque;
     if(valorDoSaque > saldo){
         std::cout << "Saldo mais tarifa superam o valor do saldo em R$" << valorDoSaque - saldo << std::endl;
@@ -46,4 +46,8 @@ float Conta::recuperarSaldo(){
 
 int Conta::retornoNumeroDeContas(){
     return numeroDeContas;
+}
+
+float Conta::taxaDeSaque()const{
+    return 0.05F;
 }
