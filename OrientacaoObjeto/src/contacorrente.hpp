@@ -5,6 +5,8 @@
 class ContaCorrente final: public Conta{
 public: 
     ContaCorrente(std::string numero, Titular titular);
-protected:
+    void tranferencia(Conta& destino, float valor);
+private:
     float taxaDeSaque() const override;
+    
 };

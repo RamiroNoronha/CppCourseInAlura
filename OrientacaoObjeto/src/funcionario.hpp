@@ -3,11 +3,12 @@
 
 class Funcionario : public Pessoa {
 
-    private:
+private:
     float salario;
 
-    public:
+public:
     Funcionario(std::string nome, Cpf cpf, float salario);
-    float recuperaSalario();
-    std::string recuperarNomePessoa();
+    float recuperaSalario() const;
+    std::string recuperarNomePessoa()const;
+    virtual float bonificacao()const = 0;
 };
