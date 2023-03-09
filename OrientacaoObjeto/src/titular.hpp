@@ -3,10 +3,8 @@
 #include <iostream>
 #include "cpf.hpp"
 #include "pessoa.hpp"
-
-class Titular : public Pessoa{
-   
-
-   public:
-   Titular(std::string nome, Cpf cpf);
+#include "autenticavel.hpp"
+class Titular : public Pessoa, public Autenticavel{   
+public:
+   Titular(std::string nome, Cpf cpf, std::string senha);
 };
